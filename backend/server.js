@@ -12,6 +12,8 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
+app.use('/api/books', require('./routes/bookRoutes'))
+
 app.use(errorHandler)
 
 app.listen(port, () => console.log(`Listening on port ${ port }`))
